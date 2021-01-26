@@ -1,0 +1,261 @@
+body {
+ background-color:black;
+ color:white;
+margin:120px;
+margin-top:10px;
+font-family: 'Montserrat', sans-serif;
+}
+#test {
+  height:10px;
+}
+#bracketside , #podium  {
+  text-align: center;
+  color: rgba(0,204,255,.96);
+ font-size: 1.7em;
+ background-color:black;
+ height:6vh;
+ border-radius: 20px;
+ line-height: 40px;
+ width:100%;
+}
+
+#bracketswitch {
+  color: rgba(0,204,255,.96);
+  font-size: 1.7em;
+  list-style: none;
+}
+
+
+.control {
+    top :10px;
+     flex-grow:1;
+    display:flex;
+}
+input{
+  width:10.6vw;
+  background-color:rgba(1, 25, 31, 0.1);
+  color: rgba(0,204,255,.96);
+  border-style: none;
+  border-color:none;
+  font-weight: 700;
+}
+
+#name2 {
+  position: absolute;
+  left:6vw;
+  position: absolute;
+
+  top:-.1vh;
+  border-bottom-color: blue;
+  border: 4px;
+  border-style: solid;
+  color:rgb(61, 221, 208);
+  width:10vw;
+}
+#name3 {
+  position: absolute;
+  left:6vw;
+  top:-5vh;
+  border-bottom-color: blue;
+  border: 4px;
+  border-style: solid;
+  color:rgb(224, 137, 65);
+  width:10vw;
+}
+.container {
+  border-radius: 15px;
+  background-color: rgba(0,204,255,.1);
+  font-family: 'Montserrat', sans-serif;
+}
+.container2 {
+  width:100%;
+  border-radius: 20px;
+
+}
+h1 {
+  margin-bottom: 15px;
+  letter-spacing: 5px;
+  color:rgb(0, 185, 209);
+  font-family: 'Montserrat', sans-serif;
+}
+
+  .container1 a {
+    
+    color:rgb(119, 15, 15);
+  }
+
+
+#name {
+  width:100px;
+}
+
+main{
+  display:flex;
+  flex-direction:row;
+}
+.round{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  width:200px;
+  list-style:none;
+  padding:0;
+}
+
+.round .spacer{
+  flex-grow:1;
+}
+.round .spacer:first-child,
+.round .spacer:last-child{
+  flex-grow:.5;
+}
+
+
+.round .game-spacer{
+  flex-grow:1;
+}
+
+
+#spacer16 {
+    flex-grow:3;
+}
+/*
+*  General Styles
+*/
+body {
+    font-family: sans-serif;
+    font-size: small;
+    padding: 10px;
+    line-height: 1.4em;
+}
+li.game{
+  padding-left:20px;
+}
+
+
+li.game.winner{
+  font-weight:bold;
+}
+
+/* ADDITIONAL CONTENT CAN BE PLACED IN THE CONTENDER LI - BUT NOTHING FOR THIS EXAMPLE
+li.game span{
+  float:right;
+  margin-right:5px;
+}
+.right li.game span{
+  float:left;
+  margin-left:5px;
+}
+ADDITIONAL CONTENT CAN BE PLACED IN THE CONTENDER LI - BUT NOTHING FOR THIS EXAMPLE */
+
+li.game-top{ border-bottom:1px solid #aaa; }
+
+li.game-spacer{ 
+  border-right:1px solid rgb(148, 39, 39);
+  min-height:40px;
+}
+li.game-spacer1{ 
+  border-right:2px blue;
+}
+
+li.game-bottom{ 
+  border-top:1px solid rgb(133, 29, 29);
+}
+li.game-bottom3{ 
+  border-top:1px solid rgb(133, 29, 29);
+}
+li.game-bottom4{ 
+  border-top:1px solid rgb(133, 29, 29);
+}
+
+ul {
+color:red;
+}
+li{
+  color: rgba(0,204,255,.96);
+}
+
+.tournament {
+margin-left:5vw;
+border-radius: 20px;
+}
+
+#spacerfinal {
+  border-right:1px solid rgb(133, 29, 29);
+}
+
+.winnerfinal {
+  width:29vw;
+}
+
+#spacerfinalb {
+  border-right:1px solid rgb(133, 29, 29);
+ 
+}
+
+#spacerfinal2 {
+  border-right:1px solid rgb(133, 29, 29);
+  width:21vw;
+}
+
+a {
+  color: red;
+  font-family: impact;
+letter-spacing: 1.5px;
+  
+}
+
+#pix {
+  width:26vw;
+  height:20vh;
+  margin:auto;
+  border-radius: 10px;
+  align-content: center;
+}
+#four {
+  display:hidden;
+}
+
+.heading1 {
+  background-color: rgba(0,204,255,.16);
+  height:32vh;
+  width:100%;
+  z-index: 33;
+  display:flex;
+  justify-content: center;
+  border-radius: 20px;
+};
+.title {
+  background-color: rgba(0,204,255,.96);
+  border-radius: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+#title {
+  font-family: 'Montserrat', sans-serif;
+}
+
+p{
+  font-family: 'Montserrat', sans-serif;
+}
+
+#gold {
+  list-style: disc;
+  color:gold;
+font-size: 1.5em;
+}
+#silver {
+  list-style: disc;
+  color:rgb(161, 161, 161);
+  font-size: 1.5em;
+}
+#bronze1 , #bronze2 {
+  list-style: disc;
+  color:rgb(138, 71, 8);
+  font-size: 1.5em;
+}
+#Finalists {
+  float:right;
+  margin-left: 6em;
+  border: 5px;
+
+}

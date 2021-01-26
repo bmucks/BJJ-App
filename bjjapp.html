@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <div class="scoreboard">
+        <div class="grid-container">
+
+            <div class="person">
+                <p id="name1" type="text"> Competitor 1</p>
+            </div>
+
+            <div class="score">
+                <input class="sbvalues" id="score1" type="" value="0"></input>
+
+            </div>
+
+            <div class="advantage">
+                <input class="sbvalues" id="advantage1" type="number" value="0"> </input>
+            </div>
+
+            <div class="penalty">
+                <input class="sbvalues" id="penalty1" type="number" value="0"> </input>
+            </div>
+
+
+            <div class="person">
+                <p id="name2" type="text"> Competitor 2</p>
+            </div>
+
+            <div class="score">
+                <input class="sbvalues" id="score2" type="number" value="0"> </input>
+            </div>
+
+            <div class="advantage">
+                <input class="sbvalues" id="advantage2" type="number" value="0"> </input>
+            </div>
+
+            <div class="penalty">
+                <input class="sbvalues" id="penalty2" type="number" name="ticketNum" value="0"> </input>
+
+            </div>
+
+            <div class="time">
+                <p id="timer"> 0:00</p>
+            </div>
+
+            <audio id="myAudio">
+
+                <source src="buzz.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+
+
+            <div class="matchinfo">
+                <p id="info"> Adult Black Belt Open Weight</p>
+                <p id="roundtype"> Round </p>
+
+            </div>
+
+            <button id="myBtn">Open Modal</button>
+
+            
+            <div id="myModal" class="modal" draggable="true">
+
+               
+                <div class="modal-content" id ="draggable-element">
+                    <span class="close">&times;</span>
+                    <p id="modalP">
+                        Tie Match! Referees Decision. Choose Who Won.
+
+                    </p>
+                    <button id="choice1">Blue</button>
+                    <button id="choice2">Orange</button>
+                </div>
+
+            </div>
+        </div>
+    
+        <div class="but-container">
+          
+
+                    <div id="clock-container" class="container">
+                                <div id="status"></div>
+                                <div class="settings-container">
+                                
+                                    <div>
+                                        <input type="number" id="break-time" value="" min="">  
+                                      <input type="number" id="work-time" value="10" min="1">
+                                    </div>
+                                </div>
+                                <h2 id="timer"></h2>
+                                <button id="start-btn" class="btn">Start</button>
+                                <button id="stop-btn" class="btn stop-btn">Stop</button>
+                                <button id="resume-btn" class="btn resume-btn">Resume</button>
+
+                                <div class="sbbut">
+    <button id="four">+4</button>
+    <button id="three">+3</button>
+    <button id="two">+2</button>
+    <button id="one">+1</button>
+    <button id="sub">-1</button>
+    <button id="advbut">+1</button>
+    <button id="penbut">+1</button>
+    
+</div>
+
+<div class="sbbut">
+        <button id="cfour">+4</button>
+        <button id="cthree">+3</button>
+        <button id="ctwo">+2</button>
+        <button id="cone">+1</button>
+        <button id="csub">-1</button>
+        <button id="cadvbut">+1</button>
+        <button id="cpenbut">+1</button>
+            </div>
+    <div class= "beltbuts">
+            <button id="white"></button>
+            <button id="blue"></button>
+            <button id="purple"></button>
+            <button id="brown"></button>
+            <button id="black"></button>
+            </div>
+        </div>
+
+        
+        <div class= "competitors">
+            Name: <input type="text"  id="comp1" value="  Competitor 1" >           
+            <button class="namebut" onclick="nameSubmit()">Submit Name</button>
+            <br>
+           Name: <input type="text" onfocus="this.value=''" id="comp2" value="  Competitor 2">           
+            <button class="namebut" onclick="nameSubmit2()">Submit Name</button>                
+        </div>
+        <div class ="weightrd">
+        <select onchange="setWeight()" id="weight">
+            <optgroup id="cat" label="Adult Male">
+              <option value="Rooster">Rooster</option>
+              <option value="Light Feather">Light Feather</option>
+              <option value="Feather">Feather</option>
+              <option value="Light">Light</option>
+              <option value="Middle">Middle</option>
+              <option value="Medium Heavy">Medium Heavy</option>
+              <option value="Heavy">Heavy</option>
+              <option value="Super Heavy">Super Heavy</option>
+              <option value="Ultra Heavy">Ultra Heavy</option>
+              <option value="Absolute">Absolute</option>
+            </optgroup>
+            <optgroup label="Adult Female">
+                <option value="Feather">Feather</option>
+                <option value="Light">Light</option>
+                <option value="Middle">Middle</option>
+                <option value="Medium Heavy">Medium Heavy</option>
+                <option value="Absolute">Absolute</option>
+            </optgroup>
+          </select> <br>
+          <select onchange="selRound()" id="round">
+            <optgroup id="rd" label="Rounds">
+              <option value="Preliminary">Preliminary</option>
+              <option value="Quarter-Final">Quarter Final</option>
+              <option value="Semi-Final">Semi-Final</option>
+              <option value="Final">Final</option>
+                        </optgroup>
+         
+          </select>
+          </div>
+          </div>
+    </div>
+   <P type="text" id="winner" value="Winner"> ___  </P> 
+ 
+   <P type="text" id="winner" value="isWinner"> Wins!  </P>
+ 
+  
+</div>
+
+    <script src="bjjapp.js"></script>
+ 
+</body>
+
+</html>
