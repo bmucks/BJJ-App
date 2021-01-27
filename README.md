@@ -12,8 +12,6 @@ I am redoing much of this project to make the code more dynamic, ensure proper E
 This was my first major project and my ignorance created a situation where the code got very out of hand and beyond  tedious. and as I went along learning lessons, I was stuck with some aspects of the code, much of I would do very different if I were to start from scratch. Slowly I will be updating various components to eliminate any hardcoding.
 Lessons we're learned and though it was a struggle,  I'm glad it happened this way.
 
-If you would like to see a working old version of the brackets with working name variables I posted a short clip here.
-https://youtu.be/Mvryijs1kNo
 
 The bracket uses flex-grow styling to appear on the bracket screen.
 Variables are passed from page to page via Localstorage.
