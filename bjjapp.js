@@ -5,6 +5,7 @@ window.onload = function loadNames(e) {
     var usera = JSON.parse(localStorage.getItem("nameArray"));
     let tWinB = localStorage.getItem("blueWon");
     let tWinO = localStorage.getItem("orangeWon");
+
     //EMBEDCOMPETITOR NAME
 
     var selected = null, // Object of the element to be moved
@@ -163,6 +164,11 @@ window.onload = function loadNames(e) {
         document.getElementById("name1").innerHTML = usera[2];
         document.getElementById("name2").innerHTML = usera[3];
 
+      }  else if (Ma === 2.2 && liNum === 7) {
+
+            document.getElementById("name1").innerHTML = usera[5];
+            document.getElementById("name2").innerHTML = usera[6];
+
     } else if (Ma === 3 && liNum === 7) {
 
 
@@ -221,6 +227,13 @@ window.onload = function loadNames(e) {
 
         document.getElementById("name1").innerHTML = localStorage.getItem("Won1.2");
         document.getElementById("name2").innerHTML = localStorage.getItem("Won2.2");
+
+    }
+    else if (Ma === 2.2 && liNum === 8) {
+
+
+        document.getElementById("name1").innerHTML = localStorage.getItem("Won3.1");
+        document.getElementById("name2").innerHTML = localStorage.getItem("Won4.1");
 
     }
 
@@ -1075,10 +1088,10 @@ function startTimer(counter = null, break_time = null, break_finished = false) {
     break_time = break_time != null ? break_time : getBreakTime();
     let session = counter;
     let timer = document.getElementById("timer");
-    clock = setInterval(timeIt, 1000); ///////
+    clock = setInterval(timeIt, 1000); 
 
     function timeIt() {
-
+        let liNum = JSON.parse(localStorage.getItem("liTotal"));
         let tWinB = localStorage.getItem("blueWon");
         let tWinO = localStorage.getItem("orangeWon");
         let blueWin = localStorage.getItem("blueWin");
@@ -1101,119 +1114,23 @@ function startTimer(counter = null, break_time = null, break_finished = false) {
             horn.play();
             let counter = 1;
             clearInterval(clock);
-
+            console.log(score1v) 
+            console.log(score2v)
             //winner
             if (score1v > score2v) {
+           
                 var x = document.getElementById("name1").innerHTML;
                 var z = document.getElementById("name2").innerHTML;
-                document.getElementById("winner").innerText = x;
-                //  document.getElementById("loser").innerText = z;
-
-                console.log(score1v);
-                // PARSE Winner
-                var m1 = document.getElementById("winner").innerText;
-                // var l1 = document.getElementById("loser").innerText;
-
-                console.log(m1);
-                var a = document.createElement("a");
-                var linkText = document.createTextNode("Continue...");
-                a.appendChild(linkText);
-                a.title = "Continue...";
-                a.href = "bjjbrack.html";
-                a.style.fontSize = "20px";
-                a.style.color = "white";
-                a.style.backgroundColor = "cornFlowerBlue";
-
-                document.body.appendChild(a);
-                counter = getWorkTime() - 1;
-                session = getWorkTime();
-                break_finished = false;
-                timer.innerHTML = convertSeconds(session);
-                status.innerHTML = "WORK TIME";
-                clearInterval(clock);
-            }
-            if (score2v > score1v) {
-                var x = document.getElementById("name1").innerHTML;
-                var z = document.getElementById("name2").innerHTML;
-                document.getElementById("winner").innerText = z;
-                //document.getElementById("loser").innerText = x;
-
-                console.log(score1v);
-                // PARSE Winner
-                var m1 = document.getElementById("winner").innerText;
-                //var l1 = document.getElementById("loser").innerText;
-
-                console.log(m1);
-                var a = document.createElement("a");
-                var linkText = document.createTextNode("Continue...");
-                a.appendChild(linkText);
-                a.title = "Continue...";
-                a.href = "bjjbrack.html";
-                a.style.fontSize = "20px";
-                a.style.color = "white";
-                a.style.backgroundColor = "cornFlowerBlue";
-
-                document.body.appendChild(a);
-                counter = getWorkTime() - 1;
-                session = getWorkTime();
-                break_finished = false;
-                timer.innerHTML = convertSeconds(session);
-                status.innerHTML = "WORK TIME";
-                clearInterval(clock);
-            }
-
-            if (score2v == score1v) {
-                let m1 = document.getElementById("winner").innerText;
-                console.log(m1);
-                alert(m1);
-                let a = document.createElement("a");
-                var x = document.getElementById("name1").innerHTML;
-                var modal = document.getElementById("myModal");
-                var span = document.getElementsByClassName("close")[0];
-                modal.style.display = "block";
-                //Blue Ref Decision
-                document.getElementById("choice1").onclick = function () {
-                    let m1 = document.getElementById("winner").innerText;
-                    console.log("blue")
-                    localStorage.setItem("blueWin", (1));
-                    localStorage.setItem("orangeWin", (0));
-                    var x = document.getElementById("name1").innerHTML;
-                    var z = document.getElementById("name2").innerHTML;
-                    document.getElementById("winner").innerText = x;
-                    document.getElementById("loser").innerText = z;
-                    localStorage.setItem("blueWon", (x));
-                    localStorage.setItem("orangeWon", (0));
-                };
-                //Orange Ref Decision
-                document.getElementById("choice2").onclick = function () {
-
-                    localStorage.setItem("orangeWin", (1));
-                    localStorage.setItem("blueWin", (0));
-                    var x = document.getElementById("name1").innerHTML;
-                    var z = document.getElementById("name2").innerHTML;
-                    document.getElementById("winner").innerText = z;
-                    document.getElementById("loser").innerText = x;
-                    localStorage.setItem("orangeWon", (z));
-                    localStorage.setItem("blueWon", (0));
-                };
                 document.getElementById("winner").innerText = x;
                 document.getElementById("loser").innerText = z;
-                window.onclick = function (event) {
-                    if (event.target == modal) {
-
-                    }
-
-
-
-                }
-
-                span.onclick = function () {
-                    modal.style.display = "none";
-
-
-                }
-
-
+                // PARSE Winner
+                var m1 = document.getElementById("winner").innerText;
+                var l1 = document.getElementById("loser").innerText;
+                let liNum = JSON.parse(localStorage.getItem("liTotal"));
+       
+                
+                console.log(m1);
+                var a = document.createElement("a");
                 var linkText = document.createTextNode("Continue...");
                 a.appendChild(linkText);
                 a.title = "Continue...";
@@ -1227,57 +1144,24 @@ function startTimer(counter = null, break_time = null, break_finished = false) {
                 session = getWorkTime();
                 break_finished = false;
                 timer.innerHTML = convertSeconds(session);
+                status.innerHTML = "WORK TIME";
                 clearInterval(clock);
 
-
-                let liNum = JSON.parse(localStorage.getItem("liTotal"));
-
-                //2 man
-                if (Ma === 1 && liNum === 2) {
-                    checkBlue = localStorage.getItem("blueWon")
-                    checkOrange = localStorage.getItem("orangeWon")
-                    localStorage.setItem("storeWinnerFinal", (m1));
-                    localStorage.setItem("silver", (l1));
-                    console.log(x);
-                    if (checkBlue === 1) {
-                        localStorage.setItem("storeWinnerFinal", x);
-                        localStorage.setItem("silver", z);
-                        console.log('chkblue');
-                        document.getElementById("winner").innerText = x;
-                    }
-                    if (checkOrange === z) {
-                        localStorage.setItem("storeWinnerFinal", z);
-                        localStorage.setItem("silver", x);
-                        console.log('checkorange');
-                        document.getElementById("winner").innerText = z;
-                    }
-
-                    span.onclick = function () {
-                        modal.style.display = "none";
-
-
-                    }
-
-                    window.onclick = function (event) {
-                        if (event.target == modal) {
-                            modal.style.display = "none";
-                            console.log('rheiadzn')
-
-                        }
-                    }
+                  //2 man
+               if (Ma === 1 && liNum === 2) {
+               checkBlue = localStorage.getItem("blueWon")
+               checkOrange = localStorage.getItem("orangeWon")
+               localStorage.setItem("storeWinnerFinal", (m1));
+               localStorage.setItem("silver", (l1));
+                      
                 }
 
-
-
-                //
                 //3 man
                 if (Ma === 1 && liNum === 3) {
-                    console.log("ok");
                     localStorage.setItem("Won1.1", (m1));
                     localStorage.setItem("bronze1", (l1));
                 }
                 if (Ma === 1.2 && liNum === 3) {
-                    console.log("ok");
                     localStorage.setItem("storeWinnerFinal", (m1));
                     localStorage.setItem("silver", (l1));
                 }
@@ -1500,6 +1384,688 @@ function startTimer(counter = null, break_time = null, break_finished = false) {
 
                     localStorage.setItem("Won3.1", (m1));
 
+                }
+
+
+                if (Ma === 4 && liNum === 9) {
+
+                    localStorage.setItem("Won4.1", (m1));
+
+                }
+                if (Ma === 1.13 && liNum === 9) {
+
+                    localStorage.setItem("storeWinnerFinal", (m1));
+
+                }
+
+
+                if (Ma === 2.2 && liNum === 9) {
+
+                    localStorage.setItem("Won2.2", (m1));
+
+                }
+                if (Ma === 1.2 && liNum === 9) {
+                    localStorage.setItem("storeBronze1", (l1));
+                    localStorage.setItem("Won1.2", (m1));
+
+                }
+
+
+
+                // 9 MAN BRACKET B
+                if (Ma === 1119 && liNum === 9) {
+                    localStorage.setItem("storeWinner1.19b", m1);
+                }
+                if (Ma === 1129 && liNum === 9) {
+                    localStorage.setItem("storeWinner1.29b", m1);
+                }
+                if (Ma === 2129 && liNum === 9) {
+                    localStorage.setItem("storeWinner2.29b", m1);
+                }
+                if (Ma === 1139 && liNum === 9) {
+                    localStorage.setItem("storeBronze2", (l1));
+                    localStorage.setItem("storeWinner1.39b", m1);
+                }
+
+
+                if (Ma === 99 && liNum === 9) {
+                    localStorage.setItem("storeWinnerFinal", (m1));
+                    localStorage.setItem("silver", (l1));
+
+                }
+
+            }
+            if (score2v > score1v) {
+                var x = document.getElementById("name1").innerHTML;
+                var z = document.getElementById("name2").innerHTML;
+                document.getElementById("winner").innerText = z;
+                document.getElementById("loser").innerText = x;
+
+                console.log(score1v);
+                // PARSE Winner
+                var m1 = document.getElementById("winner").innerText;
+                var l1 = document.getElementById("loser").innerText;
+
+                console.log(m1);
+                var a = document.createElement("a");
+                var linkText = document.createTextNode("Continue...");
+                a.appendChild(linkText);
+                a.title = "Continue...";
+                a.href = "bjjbrack.html";
+                a.style.fontSize = "20px";
+                a.style.color = "white";
+                a.style.backgroundColor = "cornFlowerBlue";
+
+                document.body.appendChild(a);
+                counter = getWorkTime() - 1;
+                session = getWorkTime();
+                break_finished = false;
+                timer.innerHTML = convertSeconds(session);
+                status.innerHTML = "WORK TIME";
+                clearInterval(clock);
+
+                  //2 man
+                  if (Ma == 1 && liNum == 2) {
+                    checkBlue = localStorage.getItem("blueWon")
+                    checkOrange = localStorage.getItem("orangeWon")
+                    localStorage.setItem("storeWinnerFinal", (m1));
+                    localStorage.setItem("silver", (l1));
+                   
+                }
+
+                //3 man
+                if (Ma === 1 && liNum === 3) {
+                    localStorage.setItem("Won1.1", (m1));
+                    localStorage.setItem("bronze1", (l1));
+                }
+                if (Ma === 1.2 && liNum === 3) {
+                    localStorage.setItem("storeWinnerFinal", (m1));
+                    localStorage.setItem("silver", (l1));
+                }
+
+                //4 man
+                if (Ma === 1 && liNum === 4) {
+                    console.log("score2v");
+                    localStorage.setItem("Won1.1", (m1));
+                    localStorage.setItem("storeBronze1", (l1));
+                }
+
+                if (Ma === 1 && liNum === 4 && blueWin === 1 && (score2v == score1v)) {
+                    let m1 = document.getElementById("winner").innerText;
+                    console.log("blue")
+                    localStorage.setItem("blueWin", (1));
+                    localStorage.setItem("orangeWin", (0));
+                    var x = document.getElementById("name1").innerHTML;
+                    var z = document.getElementById("name2").innerHTML;
+                    document.getElementById("winner").innerText = x;
+                    document.getElementById("loser").innerText = z;
+                    localStorage.setItem("blueWon", (x));
+                    localStorage.setItem("orangeWon", (0));
+                    console.log('aye');
+                    localStorage.setItem("Won1.1", (m1));
+                    localStorage.setItem("storeBronze1", (l1));
+                    localStorage.setItem("Won1.11", (m1));
+                    localStorage.setItem("storeBronze1", (l1));
+                }
+
+                if (Ma === 1 && liNum === 4 && orangeWin === 1 && (score2v == score1v)) {
+                    let m1 = document.getElementById("winner").innerText;
+                    console.log("orange")
+                    localStorage.setItem("blueWin", (0));
+                    localStorage.setItem("orangeWin", (1));
+                    var x = document.getElementById("name1").innerHTML;
+                    var z = document.getElementById("name2").innerHTML;
+                    document.getElementById("winner").innerText = z;
+                    document.getElementById("loser").innerText = x;
+                    localStorage.setItem("blueWon", (0));
+                    localStorage.setItem("orangeWon", (z));
+                    console.log('aye');
+                    localStorage.setItem("Won1.1", (m1));
+                    localStorage.setItem("storeBronze1", (l1));
+                    localStorage.setItem("Won1.11", (m1));
+                    localStorage.setItem("storeBronze1", (l1));
+
+                }
+                if (Ma === 2 && liNum === 4) {
+                    console.log("ok");
+                    localStorage.setItem("Won2.1", (m1));
+                    localStorage.setItem("storeBronze2", (l1));
+                }
+                if (Ma === 1.2 && liNum === 4) {
+                    console.log("ok");
+                    localStorage.setItem("storeWinnerFinal", (m1));
+                    localStorage.setItem("silver", (l1));
+                }
+
+
+
+                //5 man
+                if (Ma === 2 && liNum === 5) {
+                    console.log("ok");
+                    localStorage.setItem("Won1.1", (m1));
+
+
+                }
+                if (Ma === 1.2 && liNum === 5) {
+                    console.log("ok");
+                    localStorage.setItem("Won2.1", (m1));
+                    localStorage.setItem("storeBronze1", (l1));
+                }
+                if (Ma === 2.2 && liNum === 5) {
+                    console.log("ok");
+                    localStorage.setItem("Won2.2", (m1));
+                    localStorage.setItem("storeBronze2", (l1));
+                }
+
+
+                if (Ma === 1.13 && liNum === 5) {
+                    console.log("ok");
+                    localStorage.setItem("storeWinnerFinal", (m1));
+                    localStorage.setItem("silver", (l1));
+                }
+
+                //6 man
+                if (Ma === 2 && liNum === 6) {
+
+                    localStorage.setItem("Won1.1", (m1));
+
+
+                }
+                if (Ma === 3 && liNum === 6) {
+
+                    localStorage.setItem("Won2.1", (m1));
+                    localStorage.setItem("storeBronze1", (l1));
+                }
+                if (Ma === 2.2 && liNum === 6) {
+
+                    localStorage.setItem("Won2.2", (m1));
+                    localStorage.setItem("storeBronze2", (l1));
+                }
+
+
+                if (Ma === 1.2 && liNum === 6) {
+
+                    localStorage.setItem("Won1.2", (m1));
+                    localStorage.setItem("storeBronze1", (l1));
+                }
+                if (Ma === 1.13 && liNum === 6) {
+
+                    localStorage.setItem("storeWinnerFinal", (m1));
+                    localStorage.setItem("silver", (l1));
+                }
+
+
+
+                //7 man
+                if (Ma === 1 && liNum === 7) {
+
+                    localStorage.setItem("Won1.1", (m1));
+
+
+                }
+                if (Ma === 2 && liNum === 7) {
+
+                    localStorage.setItem("Won2.1", (m1));
+
+                }
+                if (Ma === 3 && liNum === 7) {
+
+                    localStorage.setItem("Won3.1", (m1));
+
+                }
+
+
+                if (Ma === 4 && liNum === 7) {
+
+                    localStorage.setItem("Won1.2", (m1));
+
+                }
+                if (Ma === 1.13 && liNum === 7) {
+
+                    localStorage.setItem("storeWinnerFinal", (m1));
+                    localStorage.setItem("silver", (l1));
+                }
+
+
+                if (Ma === 2.2 && liNum === 7) {
+
+                    localStorage.setItem("Won2.2", (m1));
+                    localStorage.setItem("storeBronze1", (l1));
+                }
+                if (Ma === 1.2 && liNum === 7) {
+
+                    localStorage.setItem("Won1.2", (m1));
+                    localStorage.setItem("storeBronze2", (l1));
+                }
+
+
+
+                //8 man
+                if (Ma === 1 && liNum === 8) {
+
+                    localStorage.setItem("Won1.1", (m1));
+
+
+                }
+                if (Ma === 2 && liNum === 8) {
+
+                    localStorage.setItem("Won2.1", (m1));
+
+                }
+                if (Ma === 3 && liNum === 8) {
+
+                    localStorage.setItem("Won3.1", (m1));
+
+                }
+
+
+                if (Ma === 4 && liNum === 8) {
+
+                    localStorage.setItem("Won4.1", (m1));
+
+                }
+                if (Ma === 1.13 && liNum === 8) {
+
+                    localStorage.setItem("storeWinnerFinal", (m1));
+                    localStorage.setItem("silver", (l1));
+                }
+
+
+                if (Ma === 2.2 && liNum === 8) {
+
+                    localStorage.setItem("Won2.2", (m1));
+                    localStorage.setItem("storeBronze2", (l1));
+                }
+                if (Ma === 1.2 && liNum === 8) {
+
+                    localStorage.setItem("Won1.2", (m1));
+                    localStorage.setItem("storeBronze1", (l1));
+                }
+
+
+                //9 man
+                if (Ma === 1 && liNum === 9) {
+
+                    localStorage.setItem("Won1.1", (m1));
+
+
+
+                }
+                if (Ma === 2 && liNum === 9) {
+
+                    localStorage.setItem("Won2.1", (m1));
+
+                }
+                if (Ma === 3 && liNum === 9) {
+
+                    localStorage.setItem("Won3.1", (m1));
+
+                }
+
+
+                if (Ma === 4 && liNum === 9) {
+
+                    localStorage.setItem("Won4.1", (m1));
+
+                }
+                if (Ma === 1.13 && liNum === 9) {
+
+                    localStorage.setItem("storeWinnerFinal", (m1));
+
+                }
+
+
+                if (Ma === 2.2 && liNum === 9) {
+
+                    localStorage.setItem("Won2.2", (m1));
+
+                }
+                if (Ma === 1.2 && liNum === 9) {
+                    localStorage.setItem("storeBronze1", (l1));
+                    localStorage.setItem("Won1.2", (m1));
+
+                }
+
+
+
+                // 9 MAN BRACKET B
+                if (Ma === 1119 && liNum === 9) {
+                    localStorage.setItem("storeWinner1.19b", m1);
+                }
+                if (Ma === 1129 && liNum === 9) {
+                    localStorage.setItem("storeWinner1.29b", m1);
+                }
+                if (Ma === 2129 && liNum === 9) {
+                    localStorage.setItem("storeWinner2.29b", m1);
+                }
+                if (Ma === 1139 && liNum === 9) {
+                    localStorage.setItem("storeBronze2", (l1));
+                    localStorage.setItem("storeWinner1.39b", m1);
+                }
+
+
+                if (Ma === 99 && liNum === 9) {
+                    localStorage.setItem("storeWinnerFinal", (m1));
+                    localStorage.setItem("silver", (l1));
+
+                }
+            }
+
+            if (score2v == score1v) {
+                let m1 = document.getElementById("winner").innerText;
+                console.log(m1);
+                let a = document.createElement("a");
+                var x = document.getElementById("name1").innerHTML;
+                var modal = document.getElementById("myModal");
+                var span = document.getElementsByClassName("close")[0];
+                modal.style.display = "block";
+                //Blue Ref Decision
+                document.getElementById("choice1").onclick = function () {
+                let m1 = document.getElementById("winner").innerText;
+                console.log("blue")
+                localStorage.setItem("blueWin", (1));
+                localStorage.setItem("orangeWin", (0));
+                var x = document.getElementById("name1").innerHTML;
+                var z = document.getElementById("name2").innerHTML;
+                document.getElementById("winner").innerText = x;
+                document.getElementById("loser").innerText = z;
+                localStorage.setItem("blueWon", (x));
+                localStorage.setItem("orangeWon", (0));
+                timeIt();
+                score1.value = 1 + parseFloat(score1.value);
+                   
+                };
+                //Orange Ref Decision
+                document.getElementById("choice2").onclick = function () {
+
+                localStorage.setItem("orangeWin", (1));
+                localStorage.setItem("blueWin", (0));
+                var x = document.getElementById("name1").innerHTML;
+                var z = document.getElementById("name2").innerHTML;
+                document.getElementById("winner").innerText = z;
+                document.getElementById("loser").innerText = x;
+                localStorage.setItem("orangeWon", (z));
+                localStorage.setItem("blueWon", (0));
+                timeIt();
+                score2.value = 1 + parseFloat(score2.value);
+                document.getElementById("winner").innerText = z;
+                document.getElementById("loser").innerText = x;
+                };
+           
+                window.onclick = function (event) {
+                    if (event.target == modal) {
+
+                    }
+                }
+
+                span.onclick = function () {
+                    modal.style.display = "none";
+
+                }
+
+
+                var linkText = document.createTextNode("Continue...");
+                a.appendChild(linkText);
+                a.title = "Continue...";
+                a.href = "bjjbrack.html";
+                a.style.fontSize = "20px";
+                a.style.color = "white";
+                a.style.backgroundColor = "cornFlowerBlue";
+
+                document.body.appendChild(a);
+                counter = getWorkTime() - 1;
+                session = getWorkTime();
+                break_finished = false;
+                timer.innerHTML = convertSeconds(session);
+                clearInterval(clock);
+
+
+            
+
+                //2 man
+                if (Ma == 1 && liNum == 2) {
+                    checkBlue = localStorage.getItem("blueWon")
+                    checkOrange = localStorage.getItem("orangeWon")
+                    localStorage.setItem("storeWinnerFinal", (m1));
+                    localStorage.setItem("silver", (l1));
+                    console.log(x);
+                    if (checkBlue === 1) {
+                        localStorage.setItem("storeWinnerFinal", x);
+                        localStorage.setItem("silver", z);
+                        console.log('chkblue');
+                        document.getElementById("winner").innerText = x;
+                    }
+                    if (checkOrange === z) {
+                        localStorage.setItem("storeWinnerFinal", z);
+                        localStorage.setItem("silver", x);
+                        console.log('checkorange');
+                        document.getElementById("winner").innerText = z;
+                    }
+
+                    span.onclick = function () {
+                        modal.style.display = "none";
+
+
+                    }
+
+                    window.onclick = function (event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                            console.log('rheiadzn')
+
+                        }
+                    }
+                }
+
+
+
+                //
+                //3 man
+                if (Ma === 1 && liNum === 3) {
+                    console.log("ok");
+                    localStorage.setItem("Won1.1", (m1));
+                    localStorage.setItem("bronze1", (l1));
+                }
+                if (Ma === 1.2 && liNum === 3) {
+                    console.log("ok");
+                    localStorage.setItem("storeWinnerFinal", (m1));
+                    localStorage.setItem("silver", (l1));
+                }
+
+
+                //4 man
+                if (Ma === 1 && liNum === 4) {
+                    console.log("score2v");
+                    localStorage.setItem("Won1.1", (m1));
+                    localStorage.setItem("storeBronze1", (l1));
+                }
+
+                if (Ma === 1 && liNum === 4 && blueWin === 1 && (score2v == score1v)) {
+                    let m1 = document.getElementById("winner").innerText;
+                    console.log("blue")
+                    localStorage.setItem("blueWin", (1));
+                    localStorage.setItem("orangeWin", (0));
+                    var x = document.getElementById("name1").innerHTML;
+                    var z = document.getElementById("name2").innerHTML;
+                    document.getElementById("winner").innerText = x;
+                    document.getElementById("loser").innerText = z;
+                    localStorage.setItem("blueWon", (x));
+                    localStorage.setItem("orangeWon", (0));
+                    console.log('aye');
+                    localStorage.setItem("Won1.1", (m1));
+                    localStorage.setItem("storeBronze1", (l1));
+                    localStorage.setItem("Won1.11", (m1));
+                    localStorage.setItem("storeBronze1", (l1));
+                }
+
+                if (Ma === 1 && liNum === 4 && orangeWin === 1 && (score2v == score1v)) {
+                    let m1 = document.getElementById("winner").innerText;
+                    console.log("orange")
+                    localStorage.setItem("blueWin", (0));
+                    localStorage.setItem("orangeWin", (1));
+                    var x = document.getElementById("name1").innerHTML;
+                    var z = document.getElementById("name2").innerHTML;
+                    document.getElementById("winner").innerText = z;
+                    document.getElementById("loser").innerText = x;
+                    localStorage.setItem("blueWon", (0));
+                    localStorage.setItem("orangeWon", (z));
+                    console.log('aye');
+                    localStorage.setItem("Won1.1", (m1));
+                    localStorage.setItem("storeBronze1", (l1));
+                    localStorage.setItem("Won1.11", (m1));
+                    localStorage.setItem("storeBronze1", (l1));
+
+                }
+                if (Ma === 2 && liNum === 4) {
+                    console.log("ok");
+                    localStorage.setItem("Won2.1", (m1));
+                    localStorage.setItem("storeBronze2", (l1));
+                }
+                if (Ma === 1.2 && liNum === 4) {
+                    console.log("ok");
+                    localStorage.setItem("storeWinnerFinal", (m1));
+                    localStorage.setItem("silver", (l1));
+                }
+
+
+
+                //5 man
+                if (Ma === 2 && liNum === 5) {
+                    console.log("ok");
+                    localStorage.setItem("Won1.1", (m1));
+
+
+                }
+                if (Ma === 1.2 && liNum === 5) {
+                    console.log("ok");
+                    localStorage.setItem("Won2.1", (m1));
+                    localStorage.setItem("storeBronze1", (l1));
+                }
+                if (Ma === 2.2 && liNum === 5) {
+                    console.log("ok");
+                    localStorage.setItem("Won2.2", (m1));
+                    localStorage.setItem("storeBronze2", (l1));
+                }
+
+
+                if (Ma === 1.13 && liNum === 5) {
+                    console.log("ok");
+                    localStorage.setItem("storeWinnerFinal", (m1));
+                    localStorage.setItem("silver", (l1));
+                }
+
+                //6 man
+                if (Ma === 2 && liNum === 6) {
+
+                    localStorage.setItem("Won1.1", (m1));
+
+
+                }
+                if (Ma === 3 && liNum === 6) {
+
+                    localStorage.setItem("Won2.1", (m1));
+                    localStorage.setItem("storeBronze1", (l1));
+                }
+                if (Ma === 2.2 && liNum === 6) {
+
+                    localStorage.setItem("Won2.2", (m1));
+                    localStorage.setItem("storeBronze2", (l1));
+                }
+
+
+                if (Ma === 1.2 && liNum === 6) {
+
+                    localStorage.setItem("Won1.2", (m1));
+                    localStorage.setItem("storeBronze1", (l1));
+                }
+                if (Ma === 1.13 && liNum === 6) {
+
+                    localStorage.setItem("storeWinnerFinal", (m1));
+                    localStorage.setItem("silver", (l1));
+                }
+
+
+
+                //7 man
+                if (Ma === 1 && liNum === 7) {
+
+                    localStorage.setItem("Won1.1", (m1));
+
+
+                }
+                if (Ma === 2 && liNum === 7) {
+
+                    localStorage.setItem("Won2.1", (m1));
+
+                }
+                if (Ma === 3 && liNum === 7) {
+
+                    localStorage.setItem("Won3.1", (m1));
+
+                }
+
+
+                if (Ma === 4 && liNum === 7) {
+                    localStorage.setItem("Won1.2", (m1));
+
+                }
+                if (Ma === 1.13 && liNum === 7) {
+                    localStorage.setItem("storeWinnerFinal", (m1));
+                    localStorage.setItem("silver", (l1));
+                }
+
+
+                if (Ma === 2.2 && liNum === 7) {
+                    localStorage.setItem("Won2.2", (m1));
+                    localStorage.setItem("storeBronze1", (l1));
+                }
+                if (Ma === 1.2 && liNum === 7) {
+                    localStorage.setItem("Won1.2", (m1));
+                    localStorage.setItem("storeBronze2", (l1));
+                }
+
+
+                //8 man
+                if (Ma === 1 && liNum === 8) {
+                    localStorage.setItem("Won1.1", (m1));
+                }
+                if (Ma === 2 && liNum === 8) {
+                    localStorage.setItem("Won2.1", (m1));
+                }
+                if (Ma === 3 && liNum === 8) {
+                    localStorage.setItem("Won3.1", (m1));
+                }
+
+
+                if (Ma === 4 && liNum === 8) {
+                    localStorage.setItem("Won4.1", (m1));
+                }
+                if (Ma === 1.13 && liNum === 8) {
+                    localStorage.setItem("storeWinnerFinal", (m1));
+                    localStorage.setItem("silver", (l1));
+                }
+
+
+                if (Ma === 2.2 && liNum === 8) {
+                    localStorage.setItem("Won2.2", (m1));
+                    localStorage.setItem("storeBronze2", (l1));
+                }
+                if (Ma === 1.2 && liNum === 8) {
+
+                    localStorage.setItem("Won1.2", (m1));
+                    localStorage.setItem("storeBronze1", (l1));
+                }
+
+
+                //9 man
+                if (Ma === 1 && liNum === 9) {
+                    localStorage.setItem("Won1.1", (m1));
+                }
+                if (Ma === 2 && liNum === 9) {
+                    localStorage.setItem("Won2.1", (m1));
+                }
+                if (Ma === 3 && liNum === 9) {
+                    localStorage.setItem("Won3.1", (m1));
                 }
 
 
@@ -2216,7 +2782,7 @@ function startTimer(counter = null, break_time = null, break_finished = false) {
 
             } else {
                 var a = document.createElement("a");
-                var linkText = document.createTextNode("Continuebbb...");
+                var linkText = document.createTextNode("Continue...");
                 a.appendChild(linkText);
                 a.title = "Continue...";
                 a.href = "bjjbrack.html";
@@ -2230,8 +2796,6 @@ function startTimer(counter = null, break_time = null, break_finished = false) {
                 break_finished = false;
                 timer.innerHTML = convertSeconds(session);
                 status.innerHTML = "WORK TIME";
-                // setColors(keyframes, 'red', 'green');
-                // startAnimation(clock_container, session);
                 clearInterval(clock);
             }
         }

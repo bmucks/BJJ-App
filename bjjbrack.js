@@ -906,11 +906,8 @@ window.onload = function loadNames(e) {
         //document.getElementById("seed24a").style.display = "none";
         document.getElementById("seed25a").style.display = "none";
         document.getElementById("seed26a").style.display = "none";
-
         document.getElementById("A-m1-2-16").style.flexGrow = "3";
-
         document.getElementById("m1-r1-16w").style.flexGrow = "2";
-
         document.getElementById('m1-r3-16w').style.display = "none";
         document.getElementById('m2-r3-16w').style.display = "none";
         document.getElementById("m1-r2-16w").style.flexGrow = "1";
@@ -919,7 +916,7 @@ window.onload = function loadNames(e) {
         document.getElementById("A-m1-3-16").style.flexGrow = "3";
 
         document.getElementById("m1-r1-16w").value = localStorage.getItem('Won1.1');
-        document.getElementById("m1-r2-16w").value = localStorage.getItem('Won1.1');
+        document.getElementById("m1-r2-16w").value = localStorage.getItem('Won1.2');
         document.getElementById("m2-r1-16w").value = localStorage.getItem('Won2.1');
         document.getElementById("m2-r2-16w").value = localStorage.getItem('Won2.2');
         document.getElementById("m3-r1-16w").value = localStorage.getItem('Won3.1');

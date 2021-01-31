@@ -1,4 +1,8 @@
-alert("This version is still undergoing heavy development. Most name variables wont be passed into proper bracket yet until I redo the bracket generator. Scoreboard does work")
+window.onload = 
+
+
+localStorage.clear();
+alert("This version is still undergoing development for bracket sizes larger than eight competitors.")
 let nameInput = document.querySelector("#nameform");
 let compSubmit = document.querySelector("#submitname");
 let competitorLog = document.querySelector("#competitorlist");
@@ -64,4 +68,5 @@ input.addEventListener("keyup", function (event) {
     // Trigger the button element with a click
     document.getElementById("submitname").click();
   }
-});
+})
+;
