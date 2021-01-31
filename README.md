@@ -6,6 +6,7 @@ Brazilian Jiu-Jitsu App which features a International Brazilian Jiu-Jitsu Feder
 Open App at Index.html
 
 Not all features are currently available.
+
 *******1/31/2021********
 Fixed the issue with name variables not displaying properly after a match in the bracket section. This should work for brackets of eight competitors or less.
 Tie functionality is still wonky and stil suffers from the previous issue.For demo purposes of the bracket system don't let it go to a tie if you want see the names be parsed.
