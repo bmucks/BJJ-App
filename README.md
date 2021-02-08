@@ -1,9 +1,13 @@
 # BJJ-App
 Please Read Before Testing
 
+
 Brazilian Jiu-Jitsu App which features a International Brazilian Jiu-Jitsu Federation scoreboard and tournament bracket generator.
 
-Open App at Index.html
+
+Start the App at Index.html
+
+
 
 Not all features are currently available.
 
